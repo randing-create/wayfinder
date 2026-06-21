@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>然 · 在复杂世界中，找到属于自己的北极星</title>
+
+<!-- SEO & 分享预览 -->
+<meta name="description" content="AI时代，什么能力比成绩更重要？从会答题，到会选择。然丁演讲 · 写给有孩子的你。">
+<meta name="author" content="然丁 Ran Ding">
+
+<!-- 微信 / 微博 / iMessage / 社交媒体预览（Open Graph） -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="什么能力比成绩更重要？">
+<meta property="og:description" content="AI时代，从会答题，到会选择。然丁关于成长、方向与主体性的演讲。">
+<meta property="og:site_name"   content="然 · 北极星人生导航">
+
+<!-- Twitter / X 预览 -->
+<meta name="twitter:card"        content="summary">
+<meta name="twitter:title"       content="什么能力比成绩更重要？">
+<meta name="twitter:description" content="AI时代，从会答题，到会选择。然丁关于成长、方向与主体性的演讲。">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reveal.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --sand:     #F0E6D6;
+  --sand-2:   #E8DACC;
+  --sand-3:   #DDD0BC;
+  --umber:    #2A2520;
+  --u80:      rgba(42,37,32,.80);
+  --u55:      rgba(42,37,32,.55);
+  --u30:      rgba(42,37,32,.30);
+  --u12:      rgba(42,37,32,.12);
+  --u05:      rgba(42,37,32,.05);
+  --moss:     #5E6E52;
+  --terra:    #B46E46;
+  --gold:     #C08A28;
+  --gold-dim: rgba(192,138,40,.15);
+  --f-serif: 'Noto Serif SC','PingFang SC','STHeiti',serif;
+  --f-gara:  'EB Garamond','Georgia',serif;
+  --f-mono:  'Space Mono','Courier New',monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--sand); }
+
+.reveal-viewport { background: var(--sand); }
+.reveal          { font-family: var(--f-serif); color: var(--umber); background: var(--sand); }
+.reveal .slides  { text-align: left; }
+.reveal .slides section { background: transparent; padding: 0; }
+.reveal h1,.reveal h2,.reveal h3,.reveal h4 {
+  font-family: var(--f-serif); text-transform: none;
+  margin: 0; line-height: 1.1; color: var(--umber); font-weight: 500;
+}
+.reveal p { margin: 0; }
+.reveal .progress        { height: 2px; color: var(--gold); }
+.reveal .progress span   { background: var(--gold); }
+.reveal .controls        { color: var(--umber); opacity: .16; bottom: 20px; right: 20px; }
+.reveal .slide-number    {
+  font-family: var(--f-mono); font-size: 10px; font-weight: 400;
+  color: var(--u30); background: transparent;
+  bottom: 22px; right: 56px; letter-spacing: .06em;
+}
+.reveal aside.notes { font-size: 13px; line-height: 1.8; color: #333; }
+
+#grain {
+  position: fixed; inset: 0; z-index: 500; pointer-events: none;
+  opacity: .042;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
+
+#brand { position:fixed;top:24px;left:34px;z-index:300;pointer-events:none;display:flex;flex-direction:column;gap:6px; }
+#brand-char { font-family:var(--f-serif);font-size:20px;font-weight:500;color:var(--umber);line-height:1; }
+#brand-rule { width:16px;height:1px;background:var(--moss);opacity:.5; }
+#brand-tag  { font-family:var(--f-mono);font-size:7.5px;font-weight:400;color:var(--moss);letter-spacing:.16em;opacity:.6;white-space:nowrap;font-style:italic; }
+#polestar   { position:fixed;top:24px;right:34px;z-index:300;pointer-events:none;opacity:.18; }
+
+@keyframes fadeUp  { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
+@keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+@keyframes slideR  { from{opacity:0;transform:translateX(-18px)} to{opacity:1;transform:none} }
+
+.ai  { opacity:0; animation:fadeUp  .85s cubic-bezier(.16,1,.3,1) both; }
+.ai2 { opacity:0; animation:fadeUp  .85s cubic-bezier(.16,1,.3,1) both; animation-delay:.22s; }
+.ai3 { opacity:0; animation:fadeUp  .85s cubic-bezier(.16,1,.3,1) both; animation-delay:.42s; }
+.ai4 { opacity:0; animation:fadeUp  .85s cubic-bezier(.16,1,.3,1) both; animation-delay:.60s; }
+.ai5 { opacity:0; animation:fadeUp  .85s cubic-bezier(.16,1,.3,1) both; animation-delay:.78s; }
+.ai6 { opacity:0; animation:fadeIn  1.0s ease both; animation-delay:.95s; }
+.sir { opacity:0; animation:slideR  .8s  cubic-bezier(.16,1,.3,1) both; }
+
+.s {
+  width:100%;height:100%;padding:68px 92px;
+  display:flex !important;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.s::before {
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 75% 40%,rgba(240,230,210,.6) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+.ghost {
+  position:absolute;pointer-events:none;user-select:none;
+  font-family:var(--f-serif);font-weight:700;color:var(--umber);
+  opacity:.034;line-height:1;white-space:nowrap;
+}
+
+.t-hero  { font-family:var(--f-serif);font-weight:700;font-size:clamp(58px,7.8vw,112px);line-height:1.0;letter-spacing:-.022em;color:var(--umber); }
+.t-large { font-family:var(--f-serif);font-weight:500;font-size:clamp(38px,5vw,70px);line-height:1.14;color:var(--umber); }
+.t-mid   { font-family:var(--f-serif);font-weight:300;font-size:clamp(28px,3.5vw,50px);line-height:1.28;color:var(--umber);opacity:.7; }
+.t-gara  { font-family:var(--f-gara);font-size:clamp(17px,1.9vw,25px);font-weight:400;font-style:italic;line-height:1.65;color:var(--u55); }
+.t-mono  { font-family:var(--f-mono);font-size:10px;font-weight:400;letter-spacing:.20em;text-transform:uppercase;color:var(--moss); }
+.t-mono-lg { font-family:var(--f-mono);font-size:13px;color:var(--u55);letter-spacing:.12em; }
+
+.c-gold  { color:var(--gold); }
+.c-terra { color:var(--terra); }
+.c-moss  { color:var(--moss); }
+.dim     { opacity:.5; }
+.dim2    { opacity:.72; }
+
+.rule      { display:block;height:1.5px;width:32px;background:var(--terra);border:none;margin:26px 0;opacity:.65; }
+.rule-gold { display:block;height:1.5px;width:32px;background:var(--gold);border:none;margin:30px 0; }
+
+.eyebrow   { display:flex;align-items:center;gap:14px;margin-bottom:28px; }
+.eyebrow::before { content:'';display:block;width:20px;height:1px;background:var(--moss);opacity:.55; }
+
+.sep       { display:flex;align-items:center;gap:16px;margin:36px 0; }
+.sep-line  { flex:0 0 52px;height:1px;background:var(--u30); }
+.sep-dia   { width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex-shrink:0; }
+
+.gold-quote { position:relative;padding-left:20px;border-left:2px solid var(--gold); }
+
+.v-accent  { position:absolute;left:88px;top:0;bottom:0;width:2px;
+             background:linear-gradient(180deg,transparent 5%,var(--terra) 35%,var(--gold) 65%,transparent 95%);
+             opacity:.22; }
+
+.bg-num    { position:absolute;pointer-events:none;user-select:none;
+             font-family:var(--f-gara);font-weight:400;font-style:italic;
+             font-size:320px;color:var(--umber);opacity:.028;line-height:1; }
+
+.cstel     { position:absolute;pointer-events:none; }
+
+.reveal .fragment           { opacity:0;transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1); }
+.reveal .fragment.fade-up   { transform:translateY(20px); }
+.reveal .fragment.visible   { opacity:1;transform:none; }
+
+.qr-wrap { width:136px;height:136px;border:1.5px solid var(--u30);background:#fff;
+           display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0; }
+.qr-c    { position:absolute;width:15px;height:15px; }
+.qr-c.tl { top:-1px;left:-1px;border-top:3px solid var(--umber);border-left:3px solid var(--umber); }
+.qr-c.tr { top:-1px;right:-1px;border-top:3px solid var(--umber);border-right:3px solid var(--umber); }
+.qr-c.bl { bottom:-1px;left:-1px;border-bottom:3px solid var(--umber);border-left:3px solid var(--umber); }
+.qr-c.br { bottom:-1px;right:-1px;border-bottom:3px solid var(--umber);border-right:3px solid var(--umber); }
+#qr-grid { width:92px;height:92px;display:grid;grid-template-columns:repeat(9,1fr);grid-template-rows:repeat(9,1fr);gap:1.5px; }
+.qc{background:var(--umber);border-radius:1px;} .qco{background:transparent;}
+
+.footer { position:absolute;bottom:26px;left:92px;right:92px;display:flex;align-items:center;
+          gap:14px;border-top:1px solid var(--u12);padding-top:13px; }
+.ft     { font-family:var(--f-mono);font-size:8.5px;color:var(--u30);letter-spacing:.10em; }
+.ft-dot { width:3px;height:3px;background:var(--u30);border-radius:50%;flex-shrink:0; }
+
+.top-band { position:absolute;top:0;left:0;right:0;height:3px;
+            background:linear-gradient(90deg,var(--gold) 0%,var(--terra) 48%,var(--moss) 100%); }
+</style>
+</head>
+<body>
+
+<div id="grain"></div>
+
+<div id="brand">
+  <span id="brand-char">然</span>
+  <div id="brand-rule"></div>
+  <span id="brand-tag">真诚一致 · 与世界共创 · 持续成长</span>
+</div>
+
+<div id="polestar">
+  <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+    <path d="M13 1.5L14.2 11.2L23.5 13L14.2 14.8L13 24.5L11.8 14.8L2.5 13L11.8 11.2Z" fill="#2A2520"/>
+    <circle cx="13" cy="13" r="1.8" fill="#C08A28"/>
+    <circle cx="13" cy="3.2" r=".8" fill="#C08A28" opacity=".45"/>
+    <line x1="13" y1="5.5" x2="5.5" y2="10" stroke="#2A2520" stroke-width=".5" opacity=".35"/>
+    <line x1="13" y1="5.5" x2="20.5" y2="10" stroke="#2A2520" stroke-width=".5" opacity=".35"/>
+    <circle cx="5.5"  cy="10" r=".65" fill="#2A2520" opacity=".35"/>
+    <circle cx="20.5" cy="10" r=".65" fill="#2A2520" opacity=".35"/>
+    <circle cx="2"    cy="8"  r=".65" fill="#2A2520" opacity=".2"/>
+    <line x1="5.5" y1="10" x2="2" y2="8" stroke="#2A2520" stroke-width=".4" opacity=".2"/>
+  </svg>
+</div>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ═══ S1 · 开场标题 ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s">
+  <div class="ghost" style="font-size:500px;right:-90px;top:50%;transform:translateY(-53%);">能</div>
+  <svg class="cstel" style="right:56px;top:56px;width:200px;height:180px;opacity:.07;" viewBox="0 0 200 180" fill="none">
+    <circle cx="158" cy="32"  r="2.8" fill="#2A2520"/>
+    <circle cx="108" cy="66"  r="1.8" fill="#2A2520"/>
+    <circle cx="172" cy="100" r="2.2" fill="#2A2520"/>
+    <circle cx="128" cy="138" r="1.8" fill="#2A2520"/>
+    <circle cx="80"  cy="92"  r="1.4" fill="#2A2520"/>
+    <line x1="158" y1="32"  x2="108" y2="66"  stroke="#2A2520" stroke-width=".75"/>
+    <line x1="108" y1="66"  x2="172" y2="100" stroke="#2A2520" stroke-width=".75"/>
+    <line x1="172" y1="100" x2="128" y2="138" stroke="#2A2520" stroke-width=".75"/>
+    <line x1="108" y1="66"  x2="80"  y2="92"  stroke="#2A2520" stroke-width=".5"/>
+    <circle cx="158" cy="32" r="8"  fill="#C08A28" opacity=".12"/>
+    <circle cx="158" cy="32" r="14" fill="#C08A28" opacity=".05"/>
+  </svg>
+
+  <div class="eyebrow t-mono ai">AI 时代 · 60 min</div>
+
+  <div class="t-hero ai2">
+    什么能力<br>
+    比成绩<br>
+    <span class="c-gold">更重要？</span>
+  </div>
+
+  <hr class="rule ai3" style="margin:30px 0 22px;">
+  <div class="t-mono-lg ai4" style="color:var(--u55);letter-spacing:.16em;">从会答题，到会选择</div>
+
+  <aside class="notes">
+【开场 · 5 分钟】Slides 1–2
+
+目标：让家长感受到"这说的不只是孩子，也是在说我。"
+不要急着讲自己。先讲一代人的故事。
+
+"在座的父母们，我们都曾经相信一件事——
+只要做一个好孩子，考上好学校，人生就会一帆风顺。
+
+今天我想和大家聊聊：
+在这个 AI 正在改写一切的时代，
+什么能力，比成绩更重要？"
+
+停顿。扫视全场。让问题在空气中悬着。
+  </aside>
+</div>
+</section>
+
+
+<!-- ═══ S2 · 开场 · 共同叙事 ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s">
+  <div class="ghost" style="font-size:460px;right:-70px;bottom:-60px;">初</div>
+
+  <div class="eyebrow t-mono ai">开场 · 共同叙事</div>
+
+  <div class="t-mid ai2" style="font-size:clamp(24px,3vw,42px);">小时候，我一直以为——</div>
+
+  <div class="t-large ai3" style="margin-top:16px;font-size:clamp(40px,5.2vw,72px);">只要做一个好孩子，</div>
+  <div class="t-large ai4" style="font-size:clamp(40px,5.2vw,72px);">人生就会<span class="c-terra">一帆风顺</span>。</div>
+
+  <hr class="rule ai5" style="margin:34px 0 28px;">
+
+  <div class="gold-quote ai6">
+    <div class="t-mid" style="opacity:1;font-size:clamp(24px,3vw,42px);">
+      后来我发现，<br>
+      人生最重要的问题，<br>
+      <span style="font-weight:500;opacity:1;color:var(--umber);">都没有标准答案。</span>
+    </div>
+  </div>
+
+  <aside class="notes">
+【开场 · 继续】
+
+"相信这个故事的，不只是我们这代人。你们当年也相信过。你们的孩子，今天也在按照这条路走。"
+
+停顿。
+
+"但有一件事，我花了很多年才明白——
+人生最重要的问题，都没有标准答案。
+不是试卷，不是申请文书，不是绩点。
+是：我是谁？我想要什么？我愿意付出什么？"
+
+让这句话在空气中停留，然后进入第一幕。
+  </aside>
+</div>
+</section>
+
+
+<!-- ═══ S3 · 第一幕 · 人大 ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s">
+  <div class="ghost" style="font-size:460px;right:-60px;top:50%;transform:translateY(-50%);">择</div>
+
+  <div class="eyebrow t-mono ai">第一幕 · 人大 · 广播台</div>
+
+  <div class="gold-quote ai2" style="margin-bottom:32px;">
+    <div class="t-large" style="font-size:clamp(36px,4.6vw,64px);">人生不只是赢得比赛。</div>
+    <div class="t-large" style="font-size:clamp(36px,4.6vw,64px);margin-top:10px;">更重要的是——</div>
+    <div class="t-hero ai3 c-gold" style="font-size:clamp(40px,5.2vw,72px);margin-top:8px;">选择参加<br>什么比赛。</div>
+  </div>
+
+  <div class="ai4 t-mono-lg" style="color:var(--u55);margin-top:8px;">人民大学 · 学生会竞选 · 广播台</div>
+
+  <aside class="notes">
+【第一幕 · 10 分钟】人大学生会竞选
+
+讲故事，不要讲道理。
+
+"大学时，我看到了学生会部长竞选。第一次看到资源、关系、派系。那时候第一次意识到——世界比试卷复杂。"
+
+冲突：继续竞争还是离开？
+
+"我面临一个选择：继续在这个游戏里打下去，还是退出，去做我真正喜欢的事？"
+
+转折："我退出了学生会竞争，留在了广播台。那是我第一次主动放弃一条看上去更有利的路。"
+
+【金句①】值得被拍照传播：
+"人生不只是赢得比赛。更重要的是选择参加什么比赛。"
+
+听众收获：优秀不等于盲目竞争。真正的成长，是知道什么值得投入。
+  </aside>
+</div>
+</section>
+
+
+<!-- ═══ S4 · 第二幕① · 咨询 ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s">
+  <div class="ghost" style="font-size:420px;left:-60px;top:50%;transform:translateY(-50%);">问</div>
+
+  <div style="margin-left:auto;max-width:680px;">
+    <div class="eyebrow t-mono ai sir">第二幕 · 德国 · 咨询公司</div>
+
+    <div class="gold-quote ai2" style="margin-bottom:32px;">
+      <div class="t-large" style="font-size:clamp(36px,4.5vw,62px);">很多聪明人，</div>
+      <div class="t-large" style="font-size:clamp(36px,4.5vw,62px);font-weight:300;opacity:.7;margin-top:8px;">在解决<span class="c-terra" style="opacity:1;">复杂性</span>，</div>
+      <hr class="rule ai3" style="margin:22px 0;">
+      <div class="t-large ai4" style="font-size:clamp(36px,4.5vw,62px);font-weight:300;">而不是创造价值。</div>
+    </div>
+
+    <div class="ai5 t-mono-lg" style="color:var(--u55);text-align:right;">世界级车企 · 自动驾驶 · 数字化转型</div>
+  </div>
+
+  <aside class="notes">
+【第二幕 · 12 分钟 · 前半段】德国与咨询
+
+"德国留学。进入咨询公司。世界级车企，自动驾驶、数字化转型——听起来完全是梦想中的职业。"
+
+停顿。
+
+"但后来我开始看到另一面：组织摩擦，内部政治，责任切割，项目延期。"
+
+重点：不要抱怨，讲觉察。
+
+"我发现我和同事们每天做的事情，是把复杂的问题变得更复杂，是向客户证明我们足够聪明。
+而不是：这件事，能让世界变得更好吗？"
+
+【金句②】值得被拍照传播：
+"很多聪明人，在解决复杂性，而不是创造价值。"
+  </aside>
+</div>
+</section>
+
+
+<!-- ═══ S5 · 第二幕② · 核心问题 ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s" style="justify-content:center;">
+  <svg class="cstel" style="right:-100px;top:50%;transform:translateY(-50%);width:480px;height:480px;opacity:.055;" viewBox="0 0 480 480" fill="none">
+    <circle cx="240" cy="240" r="210" stroke="#2A2520" stroke-width=".6"/>
+    <circle cx="240" cy="240" r="155" stroke="#2A2520" stroke-width=".5"/>
+    <circle cx="240" cy="240" r="100" stroke="#2A2520" stroke-width=".4"/>
+    <circle cx="240" cy="240" r="45"  stroke="#C08A28" stroke-width=".8"/>
+    <circle cx="240" cy="240" r="7"   fill="#C08A28"/>
+    <line x1="240" y1="28"  x2="240" y2="452" stroke="#2A2520" stroke-width=".4"/>
+    <line x1="28"  y1="240" x2="452" y2="240" stroke="#2A2520" stroke-width=".4"/>
+  </svg>
+
+  <div style="max-width:800px;">
+    <div class="t-mono ai" style="color:var(--moss);margin-bottom:44px;letter-spacing:.22em;">· · · 职业转折点</div>
+
+    <div class="ai2">
+      <div class="t-gara" style="font-size:clamp(18px,2vw,26px);">"我一直很擅长回答别人给我的问题。</div>
+      <div class="t-gara" style="font-size:clamp(18px,2vw,26px);margin-top:4px;">但花了很多年，我才开始认真回答——"</div>
+    </div>
+
+    <div class="sep ai3"><div class="sep-line"></div><div class="sep-dia"></div><div class="sep-line"></div></div>
+
+    <div class="gold-quote ai4">
+      <div class="t-hero" style="font-size:clamp(44px,5.8vw,82px);">如果未来十年，<br>只能投入<span class="c-terra">一个方向</span>，</div>
+      <div class="t-hero ai5 c-gold" style="font-size:clamp(44px,5.8vw,82px);margin-top:8px;">我愿意把生命<br>投入哪里？</div>
+    </div>
+  </div>
+
+  <aside class="notes">
+【第二幕 · 12 分钟 · 后半段】核心问题
+
+让这页停留更长时间。
+
+【金句③】值得被拍照传播：
+"我一直很擅长回答别人给我的问题。
+但花了很多年，我才开始认真回答：我真正想要什么？"
+
+先讲金句③，然后引出大问题：
+
+"有一天晚上，我面对一个空白文档，问自己——
+不是我能做什么，不是我应该做什么。
+而是：如果未来十年，只能投入一个方向，我愿意把生命投入哪里？"
+
+停顿。长时间停顿。
+
+"我希望在座的父母，也能把这个问题送给孩子。越早开始这个对话越好。"
+  </aside>
+</div>
+</section>
+
+
+<!-- ═══ S6 · 第三幕① · 张力 ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s">
+  <div class="ghost" style="font-size:400px;right:-50px;bottom:-80px;">变</div>
+
+  <div class="eyebrow t-mono ai">第三幕 · 真正的改变来自哪里</div>
+
+  <div class="ai2 t-large" style="font-size:clamp(32px,4vw,56px);">
+    大学时，我以为<br>改变世界来自<span style="font-weight:700;">政治</span>。
+  </div>
+
+  <div class="t-large fragment fade-up" data-fragment-index="1"
+       style="margin-top:26px;font-size:clamp(30px,3.7vw,52px);font-weight:300;opacity:.7;">
+    后来，我以为来自<span style="font-weight:700;opacity:1;color:var(--umber);">商业</span>。
+  </div>
+
+  <div class="t-large fragment fade-up" data-fragment-index="2"
+       style="margin-top:18px;font-size:clamp(30px,3.7vw,52px);font-weight:300;opacity:.7;">
+    再后来，是<span style="font-weight:700;opacity:1;color:var(--umber);">科技</span>。
+  </div>
+
+  <div class="fragment fade-up" data-fragment-index="3" style="margin-top:44px;">
+    <div class="t-gara" style="color:var(--u55);">每次，我都以为找到了答案。</div>
+  </div>
+
+  <svg class="cstel" style="right:72px;bottom:72px;width:160px;height:140px;opacity:.09;" viewBox="0 0 160 140" fill="none">
+    <path d="M16 128 Q50 88 80 68 Q112 48 144 16" stroke="#2A2520" stroke-width="1.4"/>
+    <circle cx="16"  cy="128" r="2.8" fill="#2A2520"/>
+    <circle cx="80"  cy="68"  r="2.8" fill="#2A2520"/>
+    <circle cx="144" cy="16"  r="3.5" fill="#C08A28"/>
+    <circle cx="144" cy="16"  r="8"   fill="#C08A28" opacity=".18"/>
+  </svg>
+
+  <aside class="notes">
+【第三幕 · 12 分钟 · 前半段】张力积累
+
+慢慢来。每个 fragment 停顿。
+
+"大学时，加入学生会，想用政治改变世界。但政治太慢，太容易被权力扭曲。" [fragment 1]
+"后来相信商业。有效率，有规模。但商业很容易变成只为自己服务。" [fragment 2]
+"后来是科技。AI、大模型——这不是改变世界吗？" [fragment 3]
+
+微笑。"每次，我以为找到了答案。"
+
+停顿，让观众等待，然后翻到下一页。
+  </aside>
+</div>
+</section>
+
+
+<!-- ═══ S7 · 第三幕② · 情感高潮 ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s" style="justify-content:center;">
+  <div class="v-accent"></div>
+  <div class="ghost" style="font-size:480px;right:-80px;top:50%;transform:translateY(-52%);">见</div>
+
+  <div style="padding-left:38px;max-width:760px;">
+    <div class="t-mono ai" style="color:var(--terra);letter-spacing:.18em;margin-bottom:28px;">✦ 全场最重要的发现</div>
+
+    <div class="ai2 t-mid" style="font-size:clamp(24px,3vw,42px);">直到接触教练——</div>
+    <div class="ai3 t-mid" style="font-size:clamp(22px,2.7vw,38px);margin-top:6px;opacity:.6;">我看到一个人，在一次对话中，</div>
+    <div class="ai4 t-mid" style="font-size:clamp(22px,2.7vw,38px);margin-top:4px;opacity:.6;">重新拥有行动力。</div>
+
+    <hr class="rule ai5" style="margin:28px 0;background:var(--terra);width:48px;">
+
+    <div class="gold-quote ai6">
+      <div class="t-large" style="font-size:clamp(36px,4.6vw,64px);">真正的改变，</div>
+      <div class="t-large" style="font-size:clamp(36px,4.6vw,64px);font-weight:300;opacity:.75;margin-top:6px;">来自每个人</div>
+      <div class="t-large c-terra" style="font-size:clamp(38px,4.8vw,68px);margin-top:6px;">重新看见<br>自己的力量。</div>
+    </div>
+  </div>
+
+  <aside class="notes">
+【第三幕 · 情感高潮】全场最重要时刻
+
+放慢。停顿更长。
+
+"直到有一天，我接触到了教练。我看到一个人，在一次对话中，重新看见了自己，重新拥有了行动力。"
+
+停顿。深呼吸。
+
+"我原来以为改变世界来自政治。后来以为来自商业。后来以为来自科技。最后我发现——"
+
+【金句④】全场最重要金句：
+"真正的改变，来自每个人重新看见自己的力量。"
+
+停顿。环顾全场。
+
+"那个瞬间，比任何 PowerPoint 更有力量。那个瞬间，让我知道：这才是我愿意把生命投入的地方。"
+  </aside>
+</div>
+</section>
+
+
+<!-- ═══ S8 · 第四幕 · AI ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s" style="justify-content:center;">
+  <div class="ghost" style="font-size:460px;right:-60px;top:50%;transform:translateY(-50%);">选</div>
+
+  <div style="max-width:700px;">
+    <div class="t-mono ai" style="color:var(--moss);letter-spacing:.22em;margin-bottom:46px;">第四幕 · AI 让世界改变了什么</div>
+
+    <div class="ai2">
+      <div class="t-hero" style="font-size:clamp(44px,5.6vw,80px);font-weight:300;opacity:.55;">AI 让答案</div>
+      <div class="t-hero" style="font-size:clamp(44px,5.6vw,80px);font-weight:300;opacity:.55;">越来越<span style="font-weight:700;opacity:1;color:var(--umber);">便宜</span>。</div>
+    </div>
+
+    <div class="sep ai3"><div class="sep-line"></div><div class="sep-dia"></div><div class="sep-line"></div></div>
+
+    <div class="ai4">
+      <div class="t-hero c-gold" style="font-size:clamp(52px,6.6vw,96px);font-weight:700;">选择</div>
+      <div class="t-hero" style="font-size:clamp(44px,5.6vw,80px);font-weight:500;">越来越<span class="c-gold">珍贵</span>。</div>
+    </div>
+
+    <div class="ai5 t-gara" style="margin-top:36px;">
+      AI 能帮你回答问题，但 AI 不能替你决定：<br>你想成为什么样的人。
+    </div>
+  </div>
+
+  <aside class="notes">
+【第四幕 · 10 分钟】AI 与选择
+
+"过去，知识稀缺。今天，知识过剩。
+ChatGPT 可以写满分作文。Claude 可以解所有数学题。AI 可以写代码，做分析，回答任何问题。"
+
+停顿。
+
+"但 AI 无法替代的是：选择。意义。价值观。方向。"
+
+【金句⑤】值得被拍照传播：
+"AI 让答案越来越便宜。选择越来越珍贵。"
+
+"AI 能帮你回答问题。但 AI 不能替你决定：你想成为什么样的人。"
+
+听众收获：未来竞争力不只是知识，更是主体性——知道自己是谁，知道自己想要什么。
+  </aside>
+</div>
+</section>
+
+
+<!-- ═══ S9 · 第五幕 · 给家长 ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s" style="justify-content:center;">
+  <div class="bg-num" style="right:56px;top:50%;transform:translateY(-50%);">3</div>
+
+  <div style="max-width:800px;">
+    <div class="eyebrow t-mono ai">第五幕 · 给父母的问题</div>
+
+    <div class="ai2 t-mid" style="font-size:clamp(24px,3vw,42px);">如果 25 岁时，</div>
+
+    <div class="ai3 t-large" style="margin-top:14px;font-size:clamp(40px,5vw,70px);color:var(--terra);">
+      孩子只能带走<br>三样东西——
+    </div>
+
+    <hr class="rule-gold ai4" style="margin:32px 0;">
+
+    <div class="ai5 t-hero" style="font-size:clamp(40px,5.2vw,72px);color:var(--gold);">你希望是什么？</div>
+
+    <div class="ai6" style="margin-top:32px;display:flex;gap:32px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--u30);flex-shrink:0;"></div>
+        <span class="t-mono-lg" style="font-size:11px;color:var(--u55);">高分 / 名校 / 稳定工作？</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;"></div>
+        <span class="t-mono-lg" style="font-size:11px;color:var(--gold);">方向感 · 独立思考 · 行动力？</span>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+【第五幕 · 8 分钟】给父母的话 — 互动
+
+完全停下来。环顾全场。
+
+"我想邀请大家思考一个问题。不需要举手，在心里想就好。"
+
+[停顿 10 秒]
+
+"如果 25 岁时，你的孩子只能带走三样东西，你希望是什么？"
+
+[可邀请 1-2 位家长分享]
+
+"高分？名校？稳定工作？这些都好，我不否认它们的价值。
+但如果 25 岁的他们，拿着一张好看的简历，却不知道自己想要什么——
+那我们有没有给他们最重要的东西？"
+
+"未来变化最快的，可能不是职业，而是我们对世界的理解。"
+
+听众收获：教育不只是培养成绩，更是培养选择的能力。
+  </aside>
+</div>
+</section>
+
+
+<!-- ═══ S10 · CTA ═══ -->
+<section data-transition="fade" data-transition-speed="slow">
+<div class="s" style="justify-content:space-between;padding-bottom:64px;">
+  <div class="top-band"></div>
+  <div class="ghost" style="font-size:360px;right:-40px;top:50%;transform:translateY(-56%);">北</div>
+
+  <div style="display:flex;align-items:center;gap:72px;flex:1;padding-top:20px;">
+    <div style="flex:1;display:flex;flex-direction:column;">
+      <div class="eyebrow t-mono ai">结尾 · CTA</div>
+      <div class="ai2 t-mid" style="font-size:clamp(22px,2.7vw,38px);">未来最重要的能力，不是会答题。</div>
+      <div class="ai3 t-large" style="margin-top:14px;font-size:clamp(34px,4.3vw,60px);">而是<span class="c-gold">知道自己是谁</span>，</div>
+      <div class="ai4 t-large" style="font-size:clamp(30px,3.8vw,52px);font-weight:300;opacity:.75;margin-top:8px;">并敢于做出<span class="c-terra" style="opacity:1;">选择</span>，</div>
+      <div class="ai5 t-large" style="font-size:clamp(28px,3.5vw,48px);font-weight:300;opacity:.65;margin-top:6px;">付出<span style="font-weight:500;opacity:1;">行动</span>。</div>
+
+      <hr class="rule-gold ai6" style="margin:36px 0 28px;">
+
+      <div class="ai6">
+        <div class="t-mono" style="color:var(--u55);margin-bottom:12px;">开启对话 · 限 5 个名额</div>
+        <div style="font-family:var(--f-serif);font-size:clamp(18px,2.3vw,30px);font-weight:500;color:var(--umber);">北极星人生导航对话</div>
+        <div class="t-gara" style="margin-top:10px;max-width:360px;font-size:clamp(13px,1.4vw,18px);line-height:1.9;color:var(--u55);">
+          帮助年轻人在复杂世界中找到方向，<br>建立主体性，拥有行动的勇气。
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;flex-shrink:0;">
+      <div class="qr-wrap ai2">
+        <div class="qr-c tl"></div><div class="qr-c tr"></div>
+        <div class="qr-c bl"></div><div class="qr-c br"></div>
+        <div id="qr-grid"></div>
+      </div>
+      <div class="t-mono" style="color:var(--u55);text-align:center;letter-spacing:.16em;">扫码申请</div>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="opacity:.22;">
+        <path d="M8 1L9.1 6.8L15 8L9.1 9.2L8 15L6.9 9.2L1 8L6.9 6.8Z" fill="#C08A28"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="ft">心里有树 Podcast</span><span class="ft-dot"></span>
+    <span class="ft">WoMen AI Lab</span><span class="ft-dot"></span>
+    <span class="ft">Ran Ding · 然</span>
+    <span style="flex:1;"></span>
+    <span class="ft" style="color:var(--moss);opacity:.65;">在复杂世界中，找到属于自己的北极星</span>
+  </div>
+
+  <aside class="notes">
+【结尾与 CTA · 3 分钟】
+
+温暖收尾。不是销售，是邀请。
+
+"这些年，我越来越关注一个问题：为什么很多优秀的年轻人，拥有很多机会，却找不到方向？
+这也是我现在在做的事情——帮助年轻人在复杂世界中找到方向，建立主体性，拥有行动的勇气。"
+
+最终金句："未来最重要的能力，不是会答题。而是知道自己是谁，并敢于做出选择，付出行动。"
+
+[指向 QR 码] "只有 5 个名额。扫码申请。"
+
+站定。微笑。等他们来找你。
+
+────────────────────────
+✦ 5 个值得被拍照的金句
+① 人生不只是赢得比赛。更重要的是选择参加什么比赛。
+② 很多聪明人，在解决复杂性，而不是创造价值。
+③ 我一直很擅长回答别人给我的问题。但花了很多年，我才开始认真回答：我真正想要什么？
+④ 真正的改变，来自每个人重新看见自己的力量。
+⑤ AI 让答案越来越便宜。选择越来越珍贵。
+────────────────────────
+  </aside>
+</div>
+</section>
+
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+  hash:true, history:true,
+  transition:'fade', transitionSpeed:'slow',
+  backgroundTransition:'fade',
+  progress:true, slideNumber:'c/t',
+  controls:true, controlsTutorial:false,
+  center:false,
+  width:1440, height:810,
+  margin:0, minScale:.15, maxScale:2.0,
+});
+
+function resetAnims(slide) {
+  slide.querySelectorAll('.ai,.ai2,.ai3,.ai4,.ai5,.ai6,.sir').forEach(el => {
+    el.style.animation = 'none';
+    el.style.opacity   = '0';
+    void el.offsetHeight;
+    el.style.animation = '';
+    el.style.opacity   = '';
+  });
+}
+Reveal.on('slidechanged', e => resetAnims(e.currentSlide));
+Reveal.on('ready',        e => resetAnims(e.currentSlide));
+
+(function(){
+  const g = document.getElementById('qr-grid'); if(!g) return;
+  const p = [[1,1,1,1,1,1,1,0,0],[1,0,0,0,0,0,1,0,1],[1,0,1,1,1,0,1,0,1],
+             [1,0,1,1,1,0,1,0,0],[1,0,0,0,0,0,1,1,0],[1,1,1,1,1,1,1,0,1],
+             [0,0,1,0,0,1,0,0,0],[1,0,1,1,0,1,1,0,1],[0,1,1,0,1,0,1,1,1]];
+  p.forEach(r=>r.forEach(c=>{const e=document.createElement('div');e.className=c?'qc':'qco';g.appendChild(e);}));
+})();
+</script>
+</body>
+</html>
